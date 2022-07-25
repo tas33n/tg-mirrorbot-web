@@ -1,7 +1,8 @@
 <?php
 error_reporting(0);
+$api = "your bot api here";
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://api.telegram.org/bot5443700122:AAFYxyGEN3dCd66QVjaVGEmrZBBsmcFioBs/getupdates');
+curl_setopt($ch, CURLOPT_URL, 'https://api.telegram.org/bot'.$api.'/getupdates');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 

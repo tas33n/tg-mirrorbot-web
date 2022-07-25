@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-
+$api = "your bot api here";
 $key = $_REQUEST["url"];  
 $typ = $_REQUEST["method"];  
 
@@ -12,7 +12,7 @@ if (filter_var($key, FILTER_VALIDATE_URL) === FALSE) {
       )</script>";
 } else {
 
-    $url = "https://api.telegram.org/bot5443700122:AAFYxyGEN3dCd66QVjaVGEmrZBBsmcFioBs/sendMessage?chat_id=-1001744435283&text=/".$typ."%20".$key;
+    $url = "https://api.telegram.org/bot'.$api.'/sendMessage?chat_id=-1001744435283&text=/".$typ."%20".$key;
     
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -33,6 +33,3 @@ if (filter_var($key, FILTER_VALIDATE_URL) === FALSE) {
       )</script>";
 
 }
-
-
-?>
