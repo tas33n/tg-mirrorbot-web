@@ -1,5 +1,6 @@
 // JS written by Themetide
 $(document).ready(() => {
+	
 
     $('#sub').click((e) => {
         e.preventDefault()
@@ -10,7 +11,8 @@ $(document).ready(() => {
         e.preventDefault();
         console.log('submit');
         id = $('#url').val();
-        var url = "/server.php?url=" + id;
+		typ = $('#type').val();
+        var url = "/server.php?url=" + id + "&method=" + typ;
         $.ajax({
             url: url,
         }).done((resp) => {

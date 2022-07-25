@@ -24,6 +24,10 @@ if ($len > 10) {
 
 ?>
 
+  <!-- this theme is a extream modified version of https://github.com/SlamDevs/slam-mirrorbot/commit/1e572f4fa3625ecceb953ce6d3e7cf7334a4d542#diff-c3d91f56f4c5d8b5af3d856d15a76bd5f00aa38d712691b91501734940761bdd
+# (c) YashDK [yash-dk@github]
+# Redesigned By - @bipuldey19 () -->
+
 <html lang="en">
 
 <head>
@@ -44,21 +48,25 @@ if ($len > 10) {
 </head>
 
 <body>
-  <!--© Designed and coded by @lamb3rt-Telegram-->
+
+  <!--*****************************************************************************************************************
+                          Redesigned and coded by @lamb3rt
+                          tg : https://t.me/lamb3rt
+                          git: https://www.github.com/tas33n
+***********************************************************************************************************************-->
+
   <header>
     <div class="brand">
       <img class="logo" src="https://telegra.ph/file/a8e7668a0f9f5f6cab6e6.jpg" alt="logo" />
-      <a href="#">
+      <a href="https://t.me/mirrorchan_x">
         <h2 class="name">Mirror Chan</h2>
       </a>
     </div>
     <div class="social">
       <a href="https://www.github.com/tas33n"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/mirrorchan_x"><i class="fab fa-telegram"></i></a>
+      <a href="https://t.me/lamb3rt"><i class="fab fa-telegram"></i></a>
     </div>
   </header>
-
-  <link rel="stylesheet" href="https://i.icomoon.io/public/3db54d4e03/GarageSaleApp/style.css">
 
   <div class="title">
     <div class="dynamic-title cd-headline clip is-full-width">
@@ -75,13 +83,15 @@ if ($len > 10) {
 
   </div>
 
-
-
   <section>
-    <form action="#" id="main">
-      <div>
-        <label for="url">Direct/Torrent link :</label>
-        <input id="url" type="url" name="url" placeholder="Enter your direct file link or torrent link" required/>
+    <form id="main">
+      <div class="col-sm-12">
+        <select name="method" class="opt col-2" id="type">
+          <option value="mirror">Mirror</option>
+          <option value="clone">Gdrive, Gdtot</option>
+          <option value="watch">YT, Netrc</option>
+        </select>
+        <input class="input col-8" id="url" type="url" name="url" placeholder="Enter your direct file link or torrent link" required />
       </div>
       <button type="submit" class="btn btn-primary" id="sub">Start mirror</button>
     </form>
@@ -91,7 +101,7 @@ if ($len > 10) {
   <section>
     <div class="container">
       <div class="row">
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="lol">
 
           <tbody>
             <?php
@@ -101,10 +111,10 @@ if ($len > 10) {
             ?>
               <tr>
 
-              <div class="fdate col-sm-12 col-lg-2"><?php
-              $date = $message->channel_post->date;
-              echo date('m/d/Y H:i:s', $date);
-               ?></div>
+                <div class="fdate col-sm-12 col-lg-2"><?php
+                                                      $date = $message->channel_post->date;
+                                                      echo date('m/d/Y H:i:s', $date);
+                                                      ?></div>
                 <div class="fname col-sm-12 col-lg-6"><?php echo $message->channel_post->text ?></div>
 
                 <div class="dbtn col-6 col-sm-6 col-lg-2"> <a id="button-1" class="button" href="<?php echo $message->channel_post->reply_markup->inline_keyboard[0][0]->url ?>">GDrive! <i id="arrow-hover" class="fas fa-cloud-download"></i></a> </div>
@@ -126,14 +136,12 @@ if ($len > 10) {
   <!-- <script src="/boom.js"></script> -->
   <script src="/mirror.js"></script>
   <script>
-
-
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     setInterval(() => {
-    //         location.reload()
-    //     }, 3000);
-    // });
-</script>
+    // $(document).ready(function() {
+    //   setInterval(function() {
+    //       $('#lol').load('#lol');
+    //   }, 3000);
+    //   });
+  </script>
 </body>
 
 </html>
